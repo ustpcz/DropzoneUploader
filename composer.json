@@ -1,12 +1,11 @@
 {
-	"name": "olicek/dropzone-uploader",
+	"name": "ustpcz/dropzone-uploader",
 	"description": "Uploader for Nette framework",
 	"homepage": "https://github.com/Olicek/DropzoneUploader",
 	"license": "GPL-3.0",
 	"authors": [
 		{
-			"name": "Petr Olišar",
-			"homepage": "http://olisar.eu"
+			"name": "Radek Prochazka"
 		}
 	],
 	"require": {
