@@ -140,7 +140,7 @@ class DropzoneUploader extends \Nette\Application\UI\Control
 		$this->handleCheckDirectory();
 		
 		$targetPath = $this->wwwDir . DIRECTORY_SEPARATOR . $this->path;
-		
+
 		if($this->rewriteExistingFiles)
 		{
 			$name = $file->getSanitizedName();
@@ -173,10 +173,7 @@ class DropzoneUploader extends \Nette\Application\UI\Control
 			{
 				$image->resize($width, $height, $flags);
 			}
-
-			$image->save($targetPath . DIRECTORY_SEPARATOR .
-				$name, $this->photo['quality'], $this->photo['type']);
-			
+			$image->save($targetPath . DIRECTORY_SEPARATOR .$name, $this->photo['quality'], $this->photo['type']);
 		} else
 		{
 			$this->moveUploadedFile($file, $targetPath, $name);
@@ -195,7 +192,6 @@ class DropzoneUploader extends \Nette\Application\UI\Control
 	public function handleCheckDirectory()
 	{
 		$oldmask = umask(0);
-		
 		if(!is_dir($this->wwwDir . DIRECTORY_SEPARATOR . $this->path))
 		{
 			mkdir($this->wwwDir . DIRECTORY_SEPARATOR . $this->path, 0777, true);
