@@ -17,19 +17,19 @@ namespace Oli\Form;
 class DropzoneUploader extends \Nette\Application\UI\Control
 {
 
-    private $wwwDir;
+    protected $wwwDir;
 
-    private $path;
+    protected $path;
 
-    private $settings;
+    protected $settings;
 
-    private $photo;
+    protected $photo;
 
-    private $isImage = TRUE;
+    protected $isImage = TRUE;
 
-    private $allowType = NULL;
+    protected $allowType = NULL;
 
-    private $rewriteExistingFiles = FALSE;
+    protected $rewriteExistingFiles = FALSE;
 
     public $onSuccess = [];
 
@@ -171,7 +171,7 @@ class DropzoneUploader extends \Nette\Application\UI\Control
     }
 
 
-    private function moveUploadedFile($file, $targetPath, $name)
+    protected function moveUploadedFile($file, $targetPath, $name)
     {
         $file->move($targetPath . DIRECTORY_SEPARATOR . $name);
     }
